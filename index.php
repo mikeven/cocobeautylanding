@@ -28,7 +28,7 @@
   .actividad{
     padding: 20px;
     border:2px solid #000;
-    height: 500px; 
+    min-height: 500px; 
     margin: 0 10px;
   }
   .img_act{
@@ -36,7 +36,7 @@
   }
   .bloq_desc{
     display: table;
-    height:500px;
+    min-height:500px;
   }
   .tx_desc{
     display: table-cell;
@@ -69,14 +69,15 @@
           
         <nav class="navbar navbar-default">
           <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fixed-collapse-navbar" aria-expanded="true"> 
+            <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fixed-collapse-navbar" aria-expanded="true"> 
             <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> 
-            </button>
-           <a class="navbar-brand logo" href="#."><img src="images/letras.png" alt="logo" class="img-responsive"></a> 
-         </div>
+            </button> -->
+            <div align="center">
+               <a class="navbar-brand logo" href="#."><img src="images/letras.png" alt="logo" class="img-responsive"></a> 
+            </div>
         
           
-          <div id="fixed-collapse-navbar" class="navbar-collapse collapse navbar-right">
+          <!-- <div id="fixed-collapse-navbar" class="navbar-collapse collapse navbar-right">
             <ul class="nav navbar-nav hidden">
               <li class="hidden">
                  <a class="page-scroll" href="#page-top"></a>
@@ -105,7 +106,7 @@
                 <a href="#contact" class="page-scroll">Contact Us</a>
               </li>
             </ul>
-          </div>
+          </div> -->
          </nav>
        </div>
        </div>
@@ -183,15 +184,17 @@
       <li class="glide__slide">
         <div class="actividad">
           <div class="row">
-            <div class="col-md-6" align="center">
+            <div class="col-md-1"></div>
+            <div class="col-md-5" align="center">
               <img src="images/5950-actividad.png" class="img-responsive img_act">
             </div>
-            <div class="col-md-6 text-center bloq_desc">
+            <div class="col-md-5 text-center bloq_desc">
               <div class="tx_desc">
                 <h3 class="titn_act">Hidratación</h3>
                 <p>Hidratación facial diseñada para la piel de verano con la familia HYDRA BEAUTY de CHANEL.<br>Haz clic <a class="rosa-chanel" href="actividad.php">aquí</a> para reservar tu espacio.</p>
               </div>
             </div>
+            <div class="col-md-1"></div>
           </div>
         </div>
       </li>
@@ -199,15 +202,17 @@
         <div class="actividad">
           
           <div class="row">
-            <div class="col-md-6" align="center">
+            <div class="col-md-1"></div>
+            <div class="col-md-5" align="center">
               <img src="images/3303-actividad.png" class="img-responsive img_act">
             </div>
-            <div class="col-md-6 text-center bloq_desc">
+            <div class="col-md-5 text-center bloq_desc">
               <div class="tx_desc">
                 <h3 class="titn_act">MAQUILLAJE</h3>
                 <p>Aplicación de maquillaje con últimas creaciones de Belleza CHANEL.<br>Haz clic <a class="rosa-chanel" href="">aquí</a> para reservar tu espacio.</p>
               </div>
             </div>
+            <div class="col-md-1"></div>
           </div>
           
         </div>
@@ -216,15 +221,17 @@
         
         <div class="actividad">
           <div class="row">
-            <div class="col-md-6" align="center">
+            <div class="col-md-1"></div>
+            <div class="col-md-5" align="center">
               <img src="images/7585-actividad.png" class="img-responsive img_act">
             </div>
-            <div class="col-md-6 text-center bloq_desc">
+            <div class="col-md-5 text-center bloq_desc">
               <div class="tx_desc">
                 <h3 class="titn_act">MANICURA</h3>
                 <p>Descubre los nuevos tonos de LE VERNIS de CHANEL para añadir color a tu verano.<br>Haz clic <a class="rosa-chanel" href="actividad.php">aquí</a> para reservar tu espacio.</p>
               </div>
             </div>
+            <div class="col-md-1"></div>
           </div>
         </div>
         
@@ -233,10 +240,10 @@
   </div>
   <div class="glide__arrows" data-glide-el="controls">
     <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-      <i class="fa fa-arrow-left"></i>
+      <i class="fa fa-2x fa-arrow-left"></i>
     </button>
     <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-      <i class="fa fa-arrow-right"></i>
+      <i class="fa fa-2x fa-arrow-right"></i>
     </button>
   </div>
 </div>
