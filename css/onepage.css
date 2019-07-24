@@ -805,7 +805,7 @@ ul.top-right li a:hover.instagram{
 
 /* ------------ Banner With Text Rotator ------------ */
 .text-rotator{
-	background:url("../images/posterframe.img.jpg");
+	background:url("../images/paralax-index1.jpg");
 	padding-top:200px;
 	background-size:cover;
 	background-attachment:fixed;
@@ -953,11 +953,15 @@ ul.top-right li a:hover.instagram{
 
 
 
-/*  ------------ Responsive Secvtion With Side Image  ------------ */
+/*  ------------ Responsive Section With Side Image  ------------ */
 #responsive .responsive-pic{}
 #responsive .responsive-pic > .col-md-6 > img{ margin-top:-42px;}
 #responsive .responsive-pic > .col-md-6, #responsive .responsive-pic > .col-sm-6{
 	padding-left:0;
+}
+
+#cococlubmap{
+	width: 35%;
 }
 
 #responsive .r-test h3 , #responsive .r-test h4{
@@ -2317,6 +2321,9 @@ ul.category li a .date{
 .text-rotator {
   padding-top:150px;
 }
+.text-rotator_ {
+  padding-top:150px;
+}
 #paralax-slider .item-content p{
   font-size:16px;
 }
@@ -2333,7 +2340,7 @@ margin-bottom:30px;
 .pricing_item {
 flex: 0 1 320px;
 }
-#bg-paralax , #testinomial, .text-rotator{
+#bg-paralax , #testinomial, .text-rotator .text-rotator_{
   background-position:center center !important;
 }	
 #slogan{
@@ -2385,6 +2392,9 @@ margin-top: 30px;
   padding: 8px 15px;
 }
 .text-rotator {
+  padding-top:80px;
+}
+.text-rotator_ {
   padding-top:80px;
 }
 #paralax-slider .item-content p{
@@ -2453,9 +2463,10 @@ margin-top: 30px;
 	  margin-left: 0;
 	}
 	
-	
-	
-		
+	#cococlubmap{
+		width: 90%;
+	}
+
 }
 
 

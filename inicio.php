@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="css/glide.core.css">
 <link rel="stylesheet" href="css/glide.theme.css">
 <style type="text/css">
+
   .bgnd_layer{
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -34,6 +35,7 @@
     width: 100%;
     height: 100%;
   }
+
   .bgnd_layer_darker{
     background-color: rgba(0, 0, 0, 0.75);
     position: absolute;
@@ -42,11 +44,15 @@
     width: 100%;
     height: 100%;
   }
+
   .actividad{
     padding: 20px;
     border:2px solid #000;
     min-height: 500px; 
     margin: 0 10px;
+  }
+  .info_actividad{
+    color: #000;
   }
   .img_act{
     max-height: 400px;
@@ -70,18 +76,35 @@
 
   #bg3 {
     padding: 10% 0;
-    position: relative;
     background-image: url("images/LesBeiges_Chanel_Project.jpg");
   }
 
   #bg2 {
-    position: relative;
     background: url(images/chanel_red.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
     
   }
+
+  #bga1{
+    position: relative;
+    padding: 10% 0;
+    background-image: url("images/5950-actividad.png");
+  }
+
+  #bga2{
+    position: relative;
+    padding: 10% 0;
+    background-image: url("images/3303-actividad.png");
+  }
+
+  #bga3{
+    position: relative;
+    padding: 10% 0;
+    background-image: url("images/7585-actividad.png");
+  }
+  
 
   #info-club p{
     color: #fff !important;
@@ -100,6 +123,15 @@
   }
   .text-rotator_ #paralax-slider{
     padding: 15% 0;
+  }
+
+  .parallax_layer{
+    background-color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
 </style>
@@ -226,97 +258,63 @@
   </div>
   <div class="parallax" id="bg3"><div class="bgnd_layer_darker"></div></div>
 </section>
-  
-<section class="container--big hidden">
-  <div class="parallax" id="bg3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p style="text-align: center;">Para m&aacute;s informaci&oacute;n puede contactar a: (+598) 95 746 802</p>
-          <p style="text-align: center;"><strong>*Todas las actividades y servicios del 
-          <span class="rosa-chanel">Coco Beauty Club</span> son cortesia de Chanel.</strong></p>
-          <a class="btn-white btn-common bounce-top page-scroll" href="#reserva">RESERVA</a>
-        </div>
+
+<section id="titulo_actividades" class="padding" style="background: #000;">
+  <div class="container-fluid">
+    <div class="row responsive-pic text-center">
+      <div class="col-md-12 col-sm-12 wow fadeInDown" data-wow-duration="500ms" data-wow-delay="600ms"> 
+        <p style="color: #FFF">Actividades</p>
       </div>
+    </div>
   </div>
 </section>
 
-<!-- Actividades -->
-<section id="reserva" class="padding">
-  <div class="glide">
-    <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides">
-        <li class="glide__slide">
-          <div class="actividad">
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-5" align="center">
-                <img src="images/5950-actividad.png" class="img-responsive img_act">
-              </div>
-              <div class="col-md-5 text-center bloq_desc">
-                <div class="tx_desc">
-                  <h3 class="titn_act">Hidratación</h3>
-                  <p>Hidratación facial diseñada para la piel de verano con la familia HYDRA BEAUTY de CHANEL.<br>Haz clic <a class="rosa-chanel" href="actividad.php">aquí</a> para reservar tu espacio.</p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
+<div id="reserva">
+  <section  class="container_x container--big">
+    <div class="content">
+      <div class="row">
+          <div class="col-md-12 text-center info_actividad">
+            <div class="">
+              <h3 class="titn_act">Hidratación</h3>
+              <p>Hidratación facial diseñada para la piel de verano con la familia HYDRA BEAUTY de CHANEL.<br>Haz clic <a class="rosa-chanel" href="actividad.php">aquí</a> para reservar tu espacio.</p>
             </div>
           </div>
-        </li>
-        <li class="glide__slide">
-          <div class="actividad">
-            
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-5" align="center">
-                <img src="images/3303-actividad.png" class="img-responsive img_act">
-              </div>
-              <div class="col-md-5 text-center bloq_desc">
-                <div class="tx_desc">
-                  <h3 class="titn_act">MAQUILLAJE</h3>
-                  <p>Aplicación de maquillaje con últimas creaciones de Belleza CHANEL.<br>Haz clic <a class="rosa-chanel" href="">aquí</a> para reservar tu espacio.</p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-            
-          </div>
-        </li>
-        <li class="glide__slide">
-          
-          <div class="actividad">
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-5" align="center">
-                <img src="images/7585-actividad.png" class="img-responsive img_act">
-              </div>
-              <div class="col-md-5 text-center bloq_desc">
-                <div class="tx_desc">
-                  <h3 class="titn_act">MANICURA</h3>
-                  <p>Descubre los nuevos tonos de LE VERNIS de CHANEL para añadir color a tu verano.<br>Haz clic <a class="rosa-chanel" href="actividad.php">aquí</a> para reservar tu espacio.</p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-          </div>
-          
-        </li>
-      </ul>
+        </div>
     </div>
-    <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-        <i class="fa fa-2x fa-arrow-left"></i>
-      </button>
-      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-        <i class="fa fa-2x fa-arrow-right"></i>
-      </button>
+    <div class="parallax" id="bga1"><div class="parallax_layer"></div></div>
+  </section>
+  
+  <section  class="container_x container--big">
+    <div class="content">
+      <div class="row">
+          <div class="col-md-12 text-center info_actividad">
+            <div class="">
+              <h3 class="titn_act">Maquillaje</h3>
+              <p>Aplicación de maquillaje con últimas creaciones de Belleza CHANEL.<br>Haz clic <a class="rosa-chanel" href="">aquí</a> para reservar tu espacio.</p>
+            </div>
+          </div>
+        </div>
     </div>
-  </div>
-</section>
+    <div class="parallax" id="bga2"><div class="parallax_layer"></div></div>
+  </section>
+
+  <section  class="container_x container--big">
+    <div class="content">
+      <div class="row">
+          <div class="col-md-12 text-center info_actividad">
+            <div class="">
+              <h3 class="titn_act">Manicura</h3>
+              <p>Descubre los nuevos tonos de LE VERNIS de CHANEL para añadir color a tu verano.<br>Haz clic <a class="rosa-chanel" href="actividad.php">aquí</a> para reservar tu espacio.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="parallax" id="bga3"><div class="parallax_layer"></div></div>
+  </section>
+</div>
 
 <!-- Footer-->
 <footer class="wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms"> 
-
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
