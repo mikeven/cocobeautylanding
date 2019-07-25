@@ -168,7 +168,7 @@ p.title{
 	margin-bottom:40px;
 }
 .padding{
-	padding:90px 0;
+	padding:50px 0;
 }
 .top-padding{
 	padding-top:90px;
@@ -263,7 +263,7 @@ p.title{
 .btn-white{
 	background:#fff;
 	color:#000;
-	border:1px solid transparent;
+	border:1px solid #222;
 }
 a.readmore{
 	font-size:13px;
@@ -473,6 +473,10 @@ ul.top-right li a:hover,
 	z-index:999;
 	width: 100%;
 	height: 55px;
+
+	display: flex;
+   justify-content: center;
+   align-items: center;
 }	
 .navbar-default {
   background-color: transparent;
@@ -819,7 +823,7 @@ ul.top-right li a:hover.instagram{
 	font-size:20px;
 }
 #paralax-slider .item-content p ,#paralax-slider .item-content h2{
-		color:#fff;
+	color:#fff;
 }
 #paralax-slider .item-content h2{
 	font-size:58px;
@@ -842,8 +846,6 @@ ul.top-right li a:hover.instagram{
 #paralax-slider .owl-controls .active span{
     background:#6BB156;
 }
-
-
 
 
 /* ------------ What We Offer ------------ */
@@ -2301,6 +2303,27 @@ ul.category li a .date{
 	}
 }
 
+@media screen and (min-width: 768px){
+	.img_act{
+	    max-height: 400px;
+	}
+	.actividad{
+		padding: 20px;
+		border:2px solid #000;
+		min-height: 250px; 
+		margin: 0 10px;
+	}
+
+	.bloq_desc{
+	    display: table;
+	    padding: 5% 0;
+	}
+
+	.glide__arrow {
+	  top: 50%;
+	}
+}
+
 
 @media screen and (max-width: 1024px){
 	
@@ -2366,7 +2389,9 @@ margin-top: 30px;
   h2{ font-size:30px; }
   #main-navigation{ background-color: #1b1d1f; }
   
-  .navbar-brand, #navigation.affix .navbar-brand{ display:inline-block;  padding: 20px 0;}
+  .navbar-brand, #navigation.affix .navbar-brand{ 
+  	display:inline-block;  padding: 15px 0 10px 0;
+  }
   .navbar-default .navbar-nav > li > a, #navigation.affix  .navbar-default .navbar-nav > li > a {
 	  padding: 10px 0;
 	}
@@ -2465,6 +2490,30 @@ margin-top: 30px;
 	
 	#cococlubmap{
 		width: 90%;
+	}
+
+	.img_act {
+	    max-height: 180px;
+	}
+
+	.tx_desc{
+		margin-top: 10px;
+	}
+
+	.actividad{
+		padding: 20px;
+		margin: 0 10px;
+		min-height: 480px; 
+		border:2px solid #000;
+	}
+
+	.glide__arrow {
+	  top: 50%;
+	}
+
+	.bloq_desc{
+	    display: table;
+	    
 	}
 
 }

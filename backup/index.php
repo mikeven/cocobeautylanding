@@ -42,64 +42,49 @@
     width: 100%;
     height: 100%;
   }
-  
+  .actividad{
+    padding: 20px;
+    border:2px solid #000;
+    min-height: 500px; 
+    margin: 0 10px;
+  }
+  .img_act{
+    max-height: 400px;
+  }
+  .bloq_desc{
+    display: table;
+    min-height:500px;
+  }
   .tx_desc{
-    padding: 2% 0;
+    display: table-cell;
+    vertical-align: middle;
   }
-  .tx_desc p{
-    font-size: 15px;
-  }
-  .titn_act{ padding: 15px 0; }
+  .titn_act{ padding: 30px 0; }
   .rosa-chanel{ color: #ed145b; }
 
-  .container--full {
+  .container--big {
+    display: table;
     width: 100%;
-    height: 100vh;
+    height: 420px;
   }
 
-  .container--small {
-    min-height: 460px;
-  }
-
-  .bgmain{
-    background: url( images/chanel_red.jpg );
-  }
-
-  #info-club p, .item-content p{
-    color: #fff !important;
-  }
-
-  .container_0, .container_1 {
-    -webkit-align-items: center;
-    align-items: center;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 30px 15px;
+  #bg3 {
+    padding: 10% 0;
     position: relative;
-    width: 100%;
+    background-image: url("images/LesBeiges_Chanel_Project.jpg");
   }
 
-  .container_0 .content {
-    border-radius: 8px;
-    color: #fff;
-    margin: 0 auto;
-    padding: 30px 35px;
-    text-align: center;
+  #bg2 {
+    position: relative;
+    background: url(images/chanel_red.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    
   }
 
-  .container_1 .content{
-    background: rgba(0, 0, 0, .5);
-    border-radius: 3px;
-    color: #fff;
-    margin: 0 auto;
-    padding: 30px 35px;
-    text-align: center;
+  #info-club p{
+    color: #fff !important;
   }
 
   .container_x .content {
@@ -109,9 +94,12 @@
     padding: 30px 35px;
     text-align: center;
   }
-  
-  .btn-actividad{
-    margin-top:15px; 
+  .text-rotator_{
+    width: 100%;
+    padding-top: 200px;
+  }
+  .text-rotator_ #paralax-slider{
+    padding: 15% 0;
   }
 
 </style>
@@ -147,19 +135,45 @@
   </div>
 </header>  
 
-<!-- Agenda tu cita -->
-<section class="container_0 container--full">
-  <div class="content" style="position:relative;">
-    <div class="item-content text-center">
-      <p>Agenda tu cita en el </p>
-      <h2>Coco <br>Beauty Club</h2>
+<!--<section class="text-rotator">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      <div id="paralax-slider" class="owl-carousel">
+        <div class="item">
+          <div class="item-content text-center">
+            <p>Agenda tu cita en el </p>
+            <h2>Coco <br>Beauty Club</h2>
+          </div>
+        </div>
+        
+      </div>
+      
+      </div>
     </div>
   </div>
-  <div class="parallax bgmain"><div class="bgnd_layer"></div></div>
+</section>-->
+
+<section class="text-rotator_">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      <div id="paralax-slider" class="owl-carousel">
+        <div class="item">
+          <div class="item-content text-center">
+            <p>Agenda tu cita en el </p>
+            <h2>Coco <br>Beauty Club</h2>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="parallax" id="bg2"><div class="bgnd_layer"></div></div>
 </section>
 
-<!-- Información de evento -->
-<section id="responsive" class="padding hidden">
+<!-- Responsive image with left -->
+<section id="responsive" class="padding">
   <div class="container-fluid">
     <div class="row responsive-pic">
       <div class="col-md-12 col-sm-12 wow fadeInDown hidden" data-wow-duration="500ms" data-wow-delay="600ms"> 
@@ -183,23 +197,48 @@
   </div>
 </section>
 
-<!-- Información de contacto -->
-<section class="container_1 container--small">
-  <div class="content">
-    
-    <div id="info-club" class="text-center">
-      <div align="center"> 
-        <h3 class="magin30 rosa-chanel">3 - 6 de enero de 2019</h3>
-      </div>   
-      <p style="text-align: center;">Calle Los Cisnes, Padrón 261 Manzana 31 José Ignacio</p>
-      
-      <p>Para m&aacute;s informaci&oacute;n puede contactar a: (+598) 95 746 802</p>
-      <p>Todas las actividades y servicios del 
-      <span class="rosa-chanel">Coco Beauty Club</span> son cortesia de Chanel.</p>
-      <a class="btn-white btn-common bounce-top page-scroll" href="#reserva">RESERVA</a>
+<!-- Paralax Effect Section -->
+<!--<div style="position:relative;">
+  <section id="bg-paralax">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p style="text-align: center;">Para m&aacute;s informaci&oacute;n puede contactar a: (+598) 95 746 802</p>
+          <p style="text-align: center;"><strong>*Todas las actividades y servicios del 
+          <span class="rosa-chanel">Coco Beauty Club</span> son cortesia de Chanel.</strong></p>
+          <a class="btn-white btn-common bounce-top page-scroll" href="#reserva">RESERVA</a>
+        </div>
+      </div>
     </div>
+  </section>
+</div>-->
+
+<section class="container_x container--big">
+  <div class="content">
+    <div class="row">
+        <div id="info-club" class="col-md-12 text-center">
+          <p>Para m&aacute;s informaci&oacute;n puede contactar a: (+598) 95 746 802</p>
+          <p><strong>*Todas las actividades y servicios del 
+          <span class="rosa-chanel">Coco Beauty Club</span> son cortesia de Chanel.</strong></p>
+          <a class="btn-white btn-common bounce-top page-scroll" href="#reserva">RESERVA</a>
+        </div>
+      </div>
   </div>
-  <div class="parallax" data-parallax-image="images/LesBeiges_Chanel_Project.jpg"></div>
+  <div class="parallax" id="bg3"><div class="bgnd_layer_darker"></div></div>
+</section>
+  
+<section class="container--big hidden">
+  <div class="parallax" id="bg3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p style="text-align: center;">Para m&aacute;s informaci&oacute;n puede contactar a: (+598) 95 746 802</p>
+          <p style="text-align: center;"><strong>*Todas las actividades y servicios del 
+          <span class="rosa-chanel">Coco Beauty Club</span> son cortesia de Chanel.</strong></p>
+          <a class="btn-white btn-common bounce-top page-scroll" href="#reserva">RESERVA</a>
+        </div>
+      </div>
+  </div>
 </section>
 
 <!-- Actividades -->
@@ -217,7 +256,7 @@
               <div class="col-md-5 text-center bloq_desc">
                 <div class="tx_desc">
                   <h3 class="titn_act">Hidratación</h3>
-                  <p>Hidratación facial diseñada para la piel de verano con la familia HYDRA BEAUTY de CHANEL.<br><a href="actividad.php" class="btn-white btn-common bounce-top btn-actividad">RESERVA</a></p>
+                  <p>Hidratación facial diseñada para la piel de verano con la familia HYDRA BEAUTY de CHANEL.<br>Haz clic <a class="rosa-chanel" href="actividad.php">aquí</a> para reservar tu espacio.</p>
                 </div>
               </div>
               <div class="col-md-1"></div>
@@ -235,8 +274,7 @@
               <div class="col-md-5 text-center bloq_desc">
                 <div class="tx_desc">
                   <h3 class="titn_act">MAQUILLAJE</h3>
-                  <p>Aplicación de maquillaje con últimas creaciones de Belleza CHANEL.<br>
-                    <a href="actividad.php" class="btn-white btn-common bounce-top btn-actividad">RESERVA</a></p>
+                  <p>Aplicación de maquillaje con últimas creaciones de Belleza CHANEL.<br>Haz clic <a class="rosa-chanel" href="">aquí</a> para reservar tu espacio.</p>
                 </div>
               </div>
               <div class="col-md-1"></div>
@@ -255,7 +293,7 @@
               <div class="col-md-5 text-center bloq_desc">
                 <div class="tx_desc">
                   <h3 class="titn_act">MANICURA</h3>
-                  <p>Descubre los nuevos tonos de LE VERNIS de CHANEL para añadir color a tu verano.<br><a href="actividad.php" class="btn-white btn-common bounce-top btn-actividad">RESERVA</a></p>
+                  <p>Descubre los nuevos tonos de LE VERNIS de CHANEL para añadir color a tu verano.<br>Haz clic <a class="rosa-chanel" href="actividad.php">aquí</a> para reservar tu espacio.</p>
                 </div>
               </div>
               <div class="col-md-1"></div>
@@ -278,6 +316,7 @@
 
 <!-- Footer-->
 <footer class="wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms"> 
+
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">

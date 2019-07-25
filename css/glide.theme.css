@@ -1,7 +1,7 @@
 .glide__arrow {
   position: absolute;
   display: block;
-  top: 50%;
+  /*top: 50%*/;
   z-index: 2;
   color: #ED145B;
   text-transform: uppercase;
