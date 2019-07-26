@@ -7,7 +7,8 @@
     ini_set( 'display_errors', 1 );
     include( "database/bd.php" );
     include( "database/data-actividad.php" );
-  
+    
+    $actividad = 
     $titulo_pagina = "Inicio";
     
 ?>
