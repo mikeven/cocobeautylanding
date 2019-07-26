@@ -22,9 +22,22 @@
 		return $registro;
 	}
 	/* --------------------------------------------------------- */
-	function obtenerHorariosActividad( $dbh, $ida ){
-		//Devuelve los registros de horario de una actividad dado su id
-		$q = "select date_format(fecha,'%d/%m/%Y') as fecha, cupo where ACTIVIDAD_id = $ida";
+	function obtenerFechasActividad( $dbh, $ida ){
+		// Devuelve las fechas en que está pautada una actividad
+		
+		mysqli_query( $dbh, "SET lc_time_names = 'es_ES';" );
+		$q = "select distinct date_format(fecha,'%W %d de %M') as fecha, 
+		 date_format(fecha,'%Y/%m/%d') as date from horario  
+		 where ACTIVIDAD_id = $ida order by fecha ASC";
+		
+		$data = mysqli_query( $dbh, $q );
+		return obtenerListaRegistros( $data );
+	}
+	/* --------------------------------------------------------- */
+	function obtenerHorariosActividadPorFecha( $dbh, $ida, $fecha ){
+		//Devuelve los registros de horas de una actividad por fecha dado su id
+		$q = "select id, date_format(fecha,'%h:%i %p') as hora, cupo 
+		from horario where '$fecha' like date_format(fecha,'%Y/%m/%d') and ACTIVIDAD_id = $ida";
 		
 		$data = mysqli_query( $dbh, $q );
 		return obtenerListaRegistros( $data );

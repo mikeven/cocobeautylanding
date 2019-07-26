@@ -228,6 +228,8 @@ p.title{
 	background:#ececec;
 }
 
+.rosa-chanel{ color: #ed145b; }
+
 /*Buttons*/
 .btn-common{
 	border:1px solid #fff;
@@ -236,7 +238,12 @@ p.title{
 
 .btn-black{
 	border:1px solid #000;
-	color:#000;
+	color:#fff;
+}
+.btn-dark{
+	background: #231F20;
+	border:1px solid #000;
+	color:#fff;
 }
 .btn-green{
 	background:#82B440;
@@ -259,6 +266,9 @@ p.title{
 	text-transform:capitalize;
 	display:inline-block;
 	padding:12px 30px;
+}
+.btn-dark:hover{
+	color:#ccc;
 }
 .btn-white{
 	background:#fff;
@@ -2255,6 +2265,10 @@ ul.category li a:hover , ul.category li a:focus{
 	color:#ED145B;
 }
 
+.lnk_confirm:hover{
+	color:#ED145B;
+}
+
 ul.category li a .date{
 	color:#82b440;
 	font-size:12px;
@@ -2270,12 +2284,14 @@ ul.category li a .date{
 
           /* Inner Pages Top*/
 .innerpage-banner {
-	background: url(../images/banner-act.jpg) no-repeat center center / cover;
-	padding-top: 200px;
-	max-height:440px;
+	position: relative;
+	/*background: url(../images/chanel_red.jpg) no-repeat center center / cover;*/
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), 
+	url(../images/chanel_red.jpg) no-repeat center center / cover;;
+	padding-top: 100px;
+	max-height:220px;
 	border-bottom: 5px solid rgba(0,0,0,0.9);
 	color: #fff;
-	
 }
 .tagline {
 	color: #fff;
@@ -2322,6 +2338,10 @@ ul.category li a .date{
 	.glide__arrow {
 	  top: 50%;
 	}
+
+	.horas_act {
+		margin-right: 20px;
+	}
 }
 
 
@@ -2335,53 +2355,49 @@ ul.category li a .date{
 
 @media screen and (max-width: 1000px){
 	 
-.navbar-default .navbar-nav > li {
-	margin: 0 6px;
-}
-.navbar-default .navbar-nav > li > a {
-  letter-spacing: 0;
-}
-.text-rotator {
-  padding-top:150px;
-}
-.text-rotator_ {
-  padding-top:150px;
-}
-#paralax-slider .item-content p{
-  font-size:16px;
-}
-#paralax-slider .item-content h2 {
-  font-size:46px;
-  margin-bottom:10px;
-}
-.r-test ul.r-feature li {
-font-size: 12px;
-}
-.we-do .do-wrap, .white-box {
-margin-bottom:30px;
-}
-.pricing_item {
-flex: 0 1 320px;
-}
-#bg-paralax , #testinomial, .text-rotator .text-rotator_{
-  background-position:center center !important;
-}	
-#slogan{
-text-align:center;
-}
-#slogan p{s
-font-size:16px;
-}	
-#slogan a.pull-right {
-float: none !important;
-margin-top: 30px;
+	.navbar-default .navbar-nav > li {
+		margin: 0 6px;
+	}
+	.navbar-default .navbar-nav > li > a {
+	  	letter-spacing: 0;
+	}
+	.text-rotator {
+	  	padding-top:150px;
+	}
+	.text-rotator_ {
+	  	padding-top:150px;
+	}
+	#paralax-slider .item-content p{
+	  	font-size:16px;
+	}
+	#paralax-slider .item-content h2 {
+	  	font-size:46px;
+	  	margin-bottom:10px;
+	}
+	.r-test ul.r-feature li {
+		font-size: 12px;
+	}
+	.we-do .do-wrap, .white-box {
+		margin-bottom:30px;
+	}
+	.pricing_item {
+		flex: 0 1 320px;
+	}
+	#bg-paralax , #testinomial, .text-rotator .text-rotator_{
+	  	background-position:center center !important;
+	}	
+	#slogan{
+		text-align:center;
+	}
+	#slogan p{s
+		font-size:16px;
+	}	
+	#slogan a.pull-right {
+		float: none !important;
+		margin-top: 30px;
 
+	}	
 }
-
-
-		
-}
-
 
 
 @media screen and (max-width: 767px){
@@ -2516,23 +2532,18 @@ margin-top: 30px;
 	    
 	}
 
+	.horas_act {
+		margin-bottom: 20px;
+	}
+
 }
 
 
 @media screen and (min-width: 641px) and (max-width: 767px) { 
-
-      #thinkers .col-sm-4{
-		  width: 48%;
-		  display:inline-block;
-	  } 
-	  
-	 
-	  
-	  
-	  
-	  
-	  
-   
+    #thinkers .col-sm-4{
+		width: 48%;
+		display:inline-block;
+	} 
 }
 
 
@@ -2567,8 +2578,6 @@ margin-top: 30px;
 	}
 }
 
-
-
 @media screen and (max-width: 479px){
 	
 	#main-navigation{
@@ -2576,5 +2585,3 @@ margin-top: 30px;
 	}
 	
 }
-
-

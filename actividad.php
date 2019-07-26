@@ -8,8 +8,14 @@
     include( "database/bd.php" );
     include( "database/data-actividad.php" );
     
-    $actividad = 
-    $titulo_pagina = "Inicio";
+    if( isset( $_GET["id"] ) && ( is_numeric( $_GET["id"] ) ) ){
+      $ida = $_GET["id"];
+      $actividad = obtenerActividadPorId( $dbh, $ida );
+      $fechas = obtenerFechasActividad( $dbh, $ida );
+    } else $actividad = NULL;
+    if( $actividad == NULL ) header('Location: index.php');
+    
+    $titulo_pagina = $actividad["nombre"];
     
 ?>
 <!doctype html>
@@ -18,7 +24,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Hidratación | Coco Beauty Club</title>
+<title><?php echo $titulo_pagina; ?> | Coco Beauty Club</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/icomoon-fonts.css">
@@ -34,6 +40,18 @@
   .img_act{
     max-height: 400px;
   }
+  .horas_act{
+    padding: 8px;
+  }
+
+  #frm-reservacion label{
+    color: rgba(0,0,0,.26);
+  }
+  .form-control{
+    border-top: none; 
+  }
+  #frm_nactividad{ font-weight: bolder; font-size: 18px }
+  /*.table-bordered{ width: 90% }*/
 </style>
 </head>
 
@@ -46,56 +64,17 @@
 </div>
 </div>
 
-
-
-
 <!-- Main-Navigation -->
 <header id="main-navigation">
   <div id="navigation" data-spy="affix" data-offset-top="20">
     <div class="container">
       <div class="row">
       <div class="col-md-12">
-      
-          
         <nav class="navbar navbar-default">
           <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fixed-collapse-navbar" aria-expanded="true"> 
-            <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> 
-            </button>
-           <a class="navbar-brand logo" href="#."><img src="images/letras.png" alt="logo" class="img-responsive"></a> 
-         </div>
-        
-          
-          <div id="fixed-collapse-navbar" class="navbar-collapse collapse navbar-right">
-            <ul class="nav navbar-nav hidden">
-              <li class="hidden">
-                 <a class="page-scroll" href="#page-top"></a>
-              </li>
-              <li class="active">
-                <a href=".text-rotator" class="page-scroll">Home</a>
-              </li>
-              <li>
-                  <a class="page-scroll" href="#about">About</a>
-              </li>
-               <li>
-                  <a class="page-scroll" href="#thinkers">Team</a>
-              </li>
-              <li>
-                <a href="#project" class="page-scroll">Work</a>
-              </li>
-              <li>
-                <a href="#pricing" class="page-scroll">Prices</a>
-              </li>
-              
-              <li>
-                <a href="#publication" class="page-scroll">Blog</a>
-              </li>
-              
-              <li>
-                <a href="#contact" class="page-scroll">Contact Us</a>
-              </li>
-            </ul>
-          </div>
+            <div align="center">
+               <a class="navbar-brand logo" href="#."><img src="images/letras.png" alt="logo" class="img-responsive"></a> 
+            </div>
          </nav>
        </div>
        </div>
@@ -108,7 +87,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-right">
-        <h2>Hidratación</h2>
+        <h2><?php echo $actividad["nombre"]?></h2>
         <p class="tagline">Hidratación facial</p>
       </div>
     </div>
@@ -121,56 +100,45 @@
     <div class="row">
       <div class="col-md-8 col-sm-8">
         <div class="blog-item"> 
-          <img src="images/5950-actividad.png" class="img-responsive img_act" alt="Hidratación" height="400">
+          <img src="images/<?php echo $actividad["imagen"]?>" 
+          class="img-responsive img_act" alt="Hidratación" height="400">
           <div class="blog-content"> 
-            
-            <p>Hidratación facial diseñada para la piel de verano con la familia HYDRA BEAUTY de CHANEL.</p>
+            <p><?php echo $actividad["descripcion"]?></p>
           </div>
           <div class="post-tag clearfix"> 
             <table class="table table-bordered table-striped mb-none" id="">
               <thead>
                 <tr>
                   <th>Fecha</th>
-                  <th colspan="2">Horario</th>
+                  <th>Horario</th>
                 </tr>
               </thead>
               <tbody>
-                
+                <?php 
+                  foreach ( $fechas as $ha ) { 
+                    $horas = obtenerHorariosActividadPorFecha( $dbh, $ida, $ha["date"] );
+                ?> 
                 <tr class="gradeX">
-                  <td>lunes 22 de julio</td>
+                  <td><?php echo $ha["fecha"] ?></td>
                   <td>
-                    <select>
-                      <option>12:00 PM</option>
-                      <option>03:00 PM</option>
+                    <select id="selhr_act" name="" class="horas_act">
+                      <option>Seleccione</option>
+                      <?php foreach ( $horas as $hr ) { ?>
+                        <option value="<?php echo $h["id"] ?>"><?php echo $hr["hora"] ?></option>
+                      <?php } ?>
                     </select>
-                  </td>
-                  <td><a href="#!">Confirmar</a></td>
+                    <a class="lnk_confirm" href="#!" data-toggle="modal" 
+                    data-target="#form-reservacion" 
+                    data-nactividad="<?php echo $actividad["nombre"]?>" 
+                    data-ida="<?php echo $actividad["id"]?>" data-fecha="<?php echo $ha['fecha'] ?>"
+                    >Confirmar</a>
+                  </td>                  
                 </tr>
-                <tr class="gradeX">
-                  <td>lunes 22 de julio</td>
-                  <td>
-                    <select>
-                      <option>12:00 PM</option>
-                      <option>03:00 PM</option>
-                    </select>
-                  </td>
-                  <td><a href="#!">Confirmar</a></td>
-                </tr>
-                <tr class="gradeX">
-                  <td>lunes 22 de julio</td>
-                  <td>
-                    <select>
-                      <option>12:00 PM</option>
-                      <option>03:00 PM</option>
-                    </select>
-                  </td>
-                  <td><a href="#!">Confirmar</a></td>
-                </tr>
-                
+                <?php } ?> 
               </tbody>
             </table>
           </div>
-          
+
         </div>
       </div>
       <aside class="col-md-4 col-sm-4">
@@ -187,6 +155,8 @@
     </div>
   </div>
 </section>
+
+<?php include( "secciones/form-reservacion.php" ); ?>
 
 <!-- Footer-->
 <footer class="wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms"> 
@@ -224,5 +194,8 @@
 <script src="js/jPushMenu.js"></script>
 <script src="js/functions.js"></script>
 
+
+<!-- Custom functions -->
+<script src="js/fn-actividad.js"></script>
 </body>
 </html>

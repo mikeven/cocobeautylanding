@@ -1,19 +1,13 @@
 
 jQuery(function($) {'use strict',
-
-
-		  
-	  //Window Loaded Handler
+	  
+	//Window Loaded Handler
 
   $(window).load(function(){'use strict';
 		 $(".loader").fadeOut("slow");
 		 
   });
 	 
-	
-   	
-	 
-  
   // ========================================================================= 
 	//	Back to Top
 	// ========================================================================= 

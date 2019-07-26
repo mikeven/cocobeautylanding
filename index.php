@@ -50,7 +50,6 @@
     font-size: 15px;
   }
   .titn_act{ padding: 15px 0; }
-  .rosa-chanel{ color: #ed145b; }
 
   .container--full {
     width: 100%;
