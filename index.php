@@ -117,6 +117,12 @@
 </style>
     
 </head>
+<?php
+  include( "database/bd.php" );
+  include( "database/data-actividad.php" );
+
+  $actividades = obtenerActividades( $dbh );
+?>
 
 <body id="page-top" data-spy="scroll" data-target="#fixed-collapse-navbar" data-offset="120">
 
@@ -207,62 +213,27 @@
   <div class="glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
+        <?php foreach ( $actividades as $a ) { ?>
         <li class="glide__slide">
           <div class="actividad">
             <div class="row">
               <div class="col-md-1"></div>
               <div class="col-md-5" align="center">
-                <img src="images/5950-actividad.png" class="img-responsive img_act">
+                <img src="images/<?php echo $a["imagen"] ?>" class="img-responsive img_act">
               </div>
               <div class="col-md-5 text-center bloq_desc">
                 <div class="tx_desc">
-                  <h3 class="titn_act">Hidratación</h3>
-                  <p>Hidratación facial diseñada para la piel de verano con la familia HYDRA BEAUTY de CHANEL.<br><a href="actividad.php" class="btn-white btn-common bounce-top btn-actividad">RESERVA</a></p>
+                  <h3 class="titn_act"><?php echo $a["nombre"] ?></h3>
+                  <p><?php echo $a["descripcion"] ?><br>
+                    <a href="actividad.php?id=<?php echo $a['id']?>" class="btn-white btn-common bounce-top btn-actividad">RESERVA</a>
+                  </p>
                 </div>
               </div>
               <div class="col-md-1"></div>
             </div>
           </div>
         </li>
-        <li class="glide__slide">
-          <div class="actividad">
-            
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-5" align="center">
-                <img src="images/3303-actividad.png" class="img-responsive img_act">
-              </div>
-              <div class="col-md-5 text-center bloq_desc">
-                <div class="tx_desc">
-                  <h3 class="titn_act">MAQUILLAJE</h3>
-                  <p>Aplicación de maquillaje con últimas creaciones de Belleza CHANEL.<br>
-                    <a href="actividad.php" class="btn-white btn-common bounce-top btn-actividad">RESERVA</a></p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-            
-          </div>
-        </li>
-        <li class="glide__slide">
-          
-          <div class="actividad">
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-5" align="center">
-                <img src="images/7585-actividad.png" class="img-responsive img_act">
-              </div>
-              <div class="col-md-5 text-center bloq_desc">
-                <div class="tx_desc">
-                  <h3 class="titn_act">MANICURA</h3>
-                  <p>Descubre los nuevos tonos de LE VERNIS de CHANEL para añadir color a tu verano.<br><a href="actividad.php" class="btn-white btn-common bounce-top btn-actividad">RESERVA</a></p>
-                </div>
-              </div>
-              <div class="col-md-1"></div>
-            </div>
-          </div>
-          
-        </li>
+        <?php } ?>
       </ul>
     </div>
     <div class="glide__arrows" data-glide-el="controls">

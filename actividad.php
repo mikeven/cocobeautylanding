@@ -1,3 +1,16 @@
+<?php
+    /*
+     * CBC Admin - Pagina de inicio
+     * 
+     */
+    
+    ini_set( 'display_errors', 1 );
+    include( "database/bd.php" );
+    include( "database/data-actividad.php" );
+  
+    $titulo_pagina = "Inicio";
+    
+?>
 <!doctype html>
 <html lang="en">
 <head>
