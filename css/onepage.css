@@ -1751,7 +1751,7 @@ ul.top-right li a:hover.instagram{
 	margin-top:45px;
 }
 .form-control:focus {
-  border-color: #82b440 !important;
+  border-color: #000 !important;
   box-shadow:none;
   transition: all 0.2s ease-in 0s;
 }

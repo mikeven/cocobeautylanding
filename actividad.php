@@ -1,6 +1,6 @@
 <?php
     /*
-     * CBC Admin - Pagina de inicio
+     * CBC - Información de actividad
      * 
      */
     
@@ -12,8 +12,10 @@
       $ida = $_GET["id"];
       $actividad = obtenerActividadPorId( $dbh, $ida );
       $fechas = obtenerFechasActividad( $dbh, $ida );
+      $actividades = obtenerActividades( $dbh );
     } else $actividad = NULL;
-    if( $actividad == NULL ) header('Location: index.php');
+    
+    //if( $actividad == NULL ) header('Location: index.php');
     
     $titulo_pagina = $actividad["nombre"];
     
@@ -45,13 +47,26 @@
   }
 
   #frm-reservacion label{
-    color: rgba(0,0,0,.26);
+    color: rgba(0,0,0,.5);
   }
   .form-control{
     border-top: none; 
   }
   #frm_nactividad{ font-weight: bolder; font-size: 18px }
-  /*.table-bordered{ width: 90% }*/
+  .tiny {
+      padding-top: 2em;
+      font-size: 10px;
+      font-style: italic;
+  }
+  label.error { color: #B94A48 !important; margin-top: 2px; font-size: 10px }
+  .btn:focus{ color: #FFF; }
+  #contenido_reservacion, .lnk_confirm{ display: none; }
+
+  input:-internal-autofill-selected {
+      background-color: #FFF !important;
+      background-image: none !important;
+      color: rgb(0, 0, 0) !important;
+  }
 </style>
 </head>
 
@@ -88,7 +103,6 @@
     <div class="row">
       <div class="col-md-12 text-right">
         <h2><?php echo $actividad["nombre"]?></h2>
-        <p class="tagline">Hidratación facial</p>
       </div>
     </div>
   </div>
@@ -100,8 +114,7 @@
     <div class="row">
       <div class="col-md-8 col-sm-8">
         <div class="blog-item"> 
-          <img src="images/<?php echo $actividad["imagen"]?>" 
-          class="img-responsive img_act" alt="Hidratación" height="400">
+          <h2><?php echo $actividad["nombre"]?></h2>
           <div class="blog-content"> 
             <p><?php echo $actividad["descripcion"]?></p>
           </div>
@@ -114,24 +127,28 @@
                 </tr>
               </thead>
               <tbody>
-                <?php 
+                <?php
+                  $idx_h = 0; 
                   foreach ( $fechas as $ha ) { 
+                    $idx_h++;
                     $horas = obtenerHorariosActividadPorFecha( $dbh, $ida, $ha["date"] );
                 ?> 
                 <tr class="gradeX">
                   <td><?php echo $ha["fecha"] ?></td>
                   <td>
-                    <select id="selhr_act" name="" class="horas_act">
-                      <option>Seleccione</option>
+                    <select id="shr_act<?php echo $idx_h ?>" class="horas_act" 
+                      data-lnk="lnk<?php echo $idx_h ?>">
+                      <option value="-1">Seleccione</option>
                       <?php foreach ( $horas as $hr ) { ?>
-                        <option value="<?php echo $h["id"] ?>"><?php echo $hr["hora"] ?></option>
+                        <option value="<?php echo $hr["id"] ?>"><?php echo $hr["hora"] ?></option>
                       <?php } ?>
                     </select>
-                    <a class="lnk_confirm" href="#!" data-toggle="modal" 
-                    data-target="#form-reservacion" 
-                    data-nactividad="<?php echo $actividad["nombre"]?>" 
-                    data-ida="<?php echo $actividad["id"]?>" data-fecha="<?php echo $ha['fecha'] ?>"
-                    >Confirmar</a>
+                    <a id="lnk<?php echo $idx_h ?>" class="lnk_confirm" href="#!" 
+                      data-toggle="modal" data-target="#form-reservacion" 
+                      data-nactividad="<?php echo $actividad["nombre"]?>" 
+                      data-shr="shr_act<?php echo $idx_h ?>" 
+                      data-fecha="<?php echo $ha['fecha'] ?>">Reservar
+                    </a>
                   </td>                  
                 </tr>
                 <?php } ?> 
@@ -142,12 +159,23 @@
         </div>
       </div>
       <aside class="col-md-4 col-sm-4">
-        
+        <div class="widget">
+          <img src="images/<?php echo $actividad["imagen"]?>" 
+          class="img-responsive img_act" alt="Hidratación" height="400">
+        </div> 
         <div class="widget"> 
           <h4>Otras actividades</h4>
           <ul class="category">
-            <li><a href="#.">Maquillaje</a></li>
-            <li><a href="#.">Manicura</a></li>
+            <?php 
+              foreach ( $actividades as $a ) { 
+                if( $a["id"] != $ida ){
+            ?>
+              <li>
+                <a href="actividad.php?id=<?php echo $a['id']?>">
+                  <?php echo $a['nombre'] ?>
+                </a>
+              </li>
+            <?php } } ?>
           </ul>
         </div>
         
@@ -193,7 +221,7 @@
 <script src="js/jquery.fancybox-media.js"></script>
 <script src="js/jPushMenu.js"></script>
 <script src="js/functions.js"></script>
-
+<script src="js/jquery.validate.js"></script>
 
 <!-- Custom functions -->
 <script src="js/fn-actividad.js"></script>
