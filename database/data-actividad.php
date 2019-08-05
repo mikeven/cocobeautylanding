@@ -27,7 +27,8 @@
 
 		$q = "select distinct date_format(fecha,'%W %d de %M') as fecha, 
 		 date_format(fecha,'%Y/%m/%d') as date from horario   
-		 where ACTIVIDAD_id = $ida order by date ASC";
+		 where ACTIVIDAD_id = $ida and fecha > date_add( NOW(), interval -4 hour ) 
+		 order by date ASC";
 		
 		$data = mysqli_query( $dbh, $q );
 		return obtenerListaRegistros( $data );
@@ -42,6 +43,8 @@
 		$data = mysqli_query( $dbh, $q );
 		return obtenerListaRegistros( $data );
 	}
+	/* --------------------------------------------------------- */
+	
 	/* --------------------------------------------------------- */
 	if( isset( $_POST["nactividad"] ) ){ 
 		// Invocación desde: js/fn-actividad.js

@@ -7,6 +7,7 @@
     ini_set( 'display_errors', 1 );
     include( "database/bd.php" );
     include( "database/data-actividad.php" );
+    include( "database/data-reservacion.php" );
     
     if( isset( $_GET["id"] ) && ( is_numeric( $_GET["id"] ) ) ){
       $ida = $_GET["id"];
@@ -139,8 +140,15 @@
                     <select id="shr_act<?php echo $idx_h ?>" class="horas_act" 
                       data-lnk="lnk<?php echo $idx_h ?>">
                       <option value="-1">Seleccione</option>
-                      <?php foreach ( $horas as $hr ) { ?>
-                        <option value="<?php echo $hr["id"] ?>"><?php echo $hr["hora"] ?></option>
+                      <?php 
+                        foreach ( $horas as $hr ) {
+                          $dis = ""; $agotado = "";
+                          $cupos_dsp = cuposDisponibles( $dbh, $hr["id"] );
+                          if( $cupos_dsp < 1 ) {$dis = "disabled"; $agotado = "- Agotado"; }
+                      ?>
+                        <option value="<?php echo $hr["id"] ?>" <?php echo $dis ?>>
+                          <?php echo $hr["hora"]." ".$agotado ?>
+                        </option>
                       <?php } ?>
                     </select>
                     <a id="lnk<?php echo $idx_h ?>" class="lnk_confirm" href="#!" 

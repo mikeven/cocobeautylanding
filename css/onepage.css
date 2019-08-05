@@ -2340,6 +2340,7 @@ ul.category li a .date{
 	}
 
 	.horas_act {
+		width: 55%;
 		margin-right: 20px;
 	}
 }
@@ -2533,6 +2534,7 @@ ul.category li a .date{
 	}
 
 	.horas_act {
+		width: 100%;
 		margin-bottom: 20px;
 	}
 

@@ -78,11 +78,13 @@
 }).apply( this, [ jQuery ]);
 
 /* --------------------------------------------------------- */
-function respuestaReservacion( mensaje ){
+function respuestaReservacion( mensaje, e ){
     // Muestra y esconde elementos para dar respuesta a un registro de reservación
 
 	$("#campos_reservacion").hide();
 	$(".modal-title").fadeOut("slow");
+    if( e == 1 ) $("#respuesta_reservacion").css( "color", "#000" );
+    if( e == -1 ) $("#respuesta_reservacion").css( "color", "red" );
     $("#respuesta_reservacion").html( mensaje );
     $("#contenido_reservacion").fadeIn();
 }
@@ -102,12 +104,7 @@ function reservar(){
         success: function( response ){
             console.log( response );
             res = jQuery.parseJSON( response );
-            if( res.exito == 1 ){
-            	respuestaReservacion( res.mje )
-            }
-            else{
-
-            }
+            respuestaReservacion( res.mje, res.exito );
         }
     });
 }
