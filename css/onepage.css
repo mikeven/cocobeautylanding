@@ -2113,7 +2113,7 @@ footer .breadcrumb li a:hover, footer .breadcrumb li a:focus{
 }
 
 .blog-item .post-tag{
-	border:1px solid #d9d9d9;
+	/*border:1px solid #d9d9d9;*/
 	padding:5px;
 	margin-bottom:70px;
 }

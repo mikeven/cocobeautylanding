@@ -68,6 +68,12 @@
       background-image: none !important;
       color: rgb(0, 0, 0) !important;
   }
+
+  #tact_horarios thead{ 
+    background: #000; color: #FFF;  
+  }
+
+  #tact_horarios tbody>tr>td, #tact_horarios thead>tr>th, #tact_horarios { border: 0 }
 </style>
 </head>
 
@@ -120,7 +126,7 @@
             <p><?php echo $actividad["descripcion"]?></p>
           </div>
           <div class="post-tag clearfix"> 
-            <table class="table table-bordered table-striped mb-none" id="">
+            <table class="table table-bordered table-striped mb-none" id="tact_horarios">
               <thead>
                 <tr>
                   <th>Fecha</th>
