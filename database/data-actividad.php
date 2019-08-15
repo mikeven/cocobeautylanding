@@ -38,7 +38,7 @@
 		//Devuelve los registros de horas de una actividad por fecha dado su id
 		$q = "select id, date_format(fecha,'%h:%i %p') as hora, cupo 
 		from horario where '$fecha' like date_format(fecha,'%Y/%m/%d') 
-		and ACTIVIDAD_id = $ida";
+		and ACTIVIDAD_id = $ida order by fecha asc";
 		
 		$data = mysqli_query( $dbh, $q );
 		return obtenerListaRegistros( $data );
