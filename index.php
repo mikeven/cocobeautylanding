@@ -20,7 +20,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/loader-colorful.css">
 
-<link rel="shortcut icon" href="images/favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <link rel="stylesheet" href="css/universal-parallax.min.css">
 <link rel="stylesheet" href="css/glide.core.css">

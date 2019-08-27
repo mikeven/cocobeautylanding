@@ -38,7 +38,7 @@
 <link rel="stylesheet" type="text/css" href="css/onepage.css">
 <link rel="stylesheet" type="text/css" href="css/loader.css">
 
-<link rel="shortcut icon" href="images/favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
 <style type="text/css">
   .img_act{
     max-height: 400px;

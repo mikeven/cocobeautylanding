@@ -5,7 +5,7 @@
   /* --------------------------------------------------------- */
   function obtenerCabecerasMensaje(){
     //Devuelve las cabecera 
-    $email_from = "mrangel@mgideas.net";
+    $email_from = "reservaciones@cocobeautyclub.com";
     $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
     $cabeceras .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
     $cabeceras .= "From: Coco Beauty Club <$email_from>";
@@ -26,11 +26,22 @@
   }
   /* --------------------------------------------------------- */
   function mensajeNuevaReservacion( $plantilla, $datos ){
-    //Llenado de mensaje para plantilla de nuevo usuario
+    //Llenado de mensaje con plantilla de nueva reservación
     $server = "http://cocobeautyclub.com/";
-    $url_cancelacion = $server."/cancelar_reserva.php?tr=".$datos["token"];
+    $url_cancelacion = $server."cancelar-reservacion.php?token=".$datos["token"];
     
     $plantilla = str_replace( "{url_cancelacion}", $url_cancelacion, $plantilla );
+    $plantilla = str_replace( "{nombre}", $datos["nombre"], $plantilla );
+    $plantilla = str_replace( "{apellido}", $datos["apellido"], $plantilla );
+    $plantilla = str_replace( "{actividad}", $datos["nactividad"], $plantilla );
+    $plantilla = str_replace( "{fecha_y_hora}", $datos["fecha_act"], $plantilla );
+    
+    return $plantilla;
+  }
+  /* --------------------------------------------------------- */
+  function mensajeCancelacionReservacion( $plantilla, $datos ){
+    //Llenado de mensaje con plantilla de reservación cancelada
+    
     $plantilla = str_replace( "{nombre}", $datos["nombre"], $plantilla );
     $plantilla = str_replace( "{apellido}", $datos["apellido"], $plantilla );
     $plantilla = str_replace( "{actividad}", $datos["nactividad"], $plantilla );
@@ -60,14 +71,14 @@
     return $sobre; 
   }
   /* --------------------------------------------------------- */
-  function enviarMensajeEmail( $tipo_mensaje, $datos, $email ){
+  function enviarMensajeEmail( $tipo_mensaje, $datos, $email_receiver ){
     //Construcción del mensaje para enviar por email
     
     $cabeceras = obtenerCabecerasMensaje();
     $plantilla = obtenerPlantillaMensaje( $tipo_mensaje );
     $envio = escribirMensaje( $tipo_mensaje, $plantilla, $datos );
-    print_r( $envio["mensaje"] );
-    //mail( $email_receiver, $envio["asunto"], $envio["mensaje"], $cabeceras );
+    //print_r( $envio["mensaje"] );
+    mail( $email_receiver, $envio["asunto"], $envio["mensaje"], $cabeceras );
   }
   /* --------------------------------------------------------- */
 ?>

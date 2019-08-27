@@ -98,7 +98,7 @@
 				$res["exito"] = 1;
 				$reservacion["id"] = $rsp;
 				$res["mje"] = "¡Su reservación se ha registrado con éxito!";
-				//enviarMensajeEmail( "nueva_reservacion", $reservacion, $reservacion["email"] );
+				enviarMensajeEmail( "nueva_reservacion", $reservacion, $reservacion["email"] );
 			}else{
 				$res["exito"] = -1;
 				$res["mje"] = "Error al registrar reservación";
