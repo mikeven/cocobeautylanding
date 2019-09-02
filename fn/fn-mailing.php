@@ -22,7 +22,9 @@
     );
 
     $archivo = $archivos[$accion];
-    return file_get_contents( "../fn/mailing/".$archivo );
+    $url_dir = "../fn/mailing/";
+    if( $accion == "cancelacion_reservacion" ) $url_dir = "../fn/mailing/";
+    return file_get_contents( $url_dir.$archivo );
   }
   /* --------------------------------------------------------- */
   function mensajeNuevaReservacion( $plantilla, $datos ){
@@ -33,8 +35,8 @@
     $plantilla = str_replace( "{url_cancelacion}", $url_cancelacion, $plantilla );
     $plantilla = str_replace( "{nombre}", $datos["nombre"], $plantilla );
     $plantilla = str_replace( "{apellido}", $datos["apellido"], $plantilla );
-    $plantilla = str_replace( "{actividad}", $datos["nactividad"], $plantilla );
-    $plantilla = str_replace( "{fecha_y_hora}", $datos["fecha_act"], $plantilla );
+    $plantilla = str_replace( "{actividad}", $datos["actividad"], $plantilla );
+    $plantilla = str_replace( "{fecha_y_hora}", $datos["fecha"], $plantilla );
     
     return $plantilla;
   }
@@ -44,8 +46,8 @@
     
     $plantilla = str_replace( "{nombre}", $datos["nombre"], $plantilla );
     $plantilla = str_replace( "{apellido}", $datos["apellido"], $plantilla );
-    $plantilla = str_replace( "{actividad}", $datos["nactividad"], $plantilla );
-    $plantilla = str_replace( "{fecha_y_hora}", $datos["fecha_act"], $plantilla );
+    $plantilla = str_replace( "{actividad}", $datos["actividad"], $plantilla );
+    $plantilla = str_replace( "{fecha_y_hora}", $datos["fecha"], $plantilla );
     
     return $plantilla;
   }
@@ -77,7 +79,7 @@
     $cabeceras = obtenerCabecerasMensaje();
     $plantilla = obtenerPlantillaMensaje( $tipo_mensaje );
     $envio = escribirMensaje( $tipo_mensaje, $plantilla, $datos );
-    //print_r( $envio["mensaje"] );
+    
     mail( $email_receiver, $envio["asunto"], $envio["mensaje"], $cabeceras );
   }
   /* --------------------------------------------------------- */

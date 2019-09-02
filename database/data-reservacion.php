@@ -3,6 +3,27 @@
 	/* CBC - Datos sobre Reservaciones */
 	/* --------------------------------------------------------- */
 	/* --------------------------------------------------------- */
+	function obtenerReservacionPorId( $dbh, $idr ){
+		// Devuelve el registro de una reservación dado su id
+
+		mysqli_query( $dbh, "SET lc_time_names = 'es_ES';" );
+		$q = "select r.id, r.nombre, r.apellido, r.email, r.telefono, r.estado, 
+		r.token_creacion as token, r.usuario_registro, r.usuario_cancelacion, r.usuario_modificacion, 
+		a.id as ida, a.nombre as actividad, a.descripcion, a.imagen, h.id as idhorario, 
+		date_format(h.fecha,'%W %d de %M %h:%i %p') as fecha, 
+		date_format(r.fecha,'%d/%m/%Y %h:%i %p') as fecha_registro,
+		date_format(r.fecha_cambio,'%d/%m/%Y %h:%i %p') as fecha_actualizacion, 
+		date_format(r.fecha_cancelacion,'%d/%m/%Y %h:%i %p') as fecha_cancelacion, 
+		( NOW() >= h.fecha ) as fecha_pasada
+		from actividad a, horario h, reservacion r where r.HORARIO_id = h.id and 
+		h.ACTIVIDAD_id = a.id and r.id = $idr";
+		
+		$data = mysqli_query( $dbh, $q );
+		$data ? $registro = mysqli_fetch_array( $data ) : $registro = NULL;
+		
+		return $registro;
+	}
+	/* --------------------------------------------------------- */
 	function obtenerReservacionPorToken( $dbh, $token ){
 		// Devuelve el registro de una reservación
 
@@ -98,6 +119,7 @@
 				$res["exito"] = 1;
 				$reservacion["id"] = $rsp;
 				$res["mje"] = "¡Su reservación se ha registrado con éxito!";
+				$reservacion = obtenerReservacionPorId( $dbh, $rsp );
 				enviarMensajeEmail( "nueva_reservacion", $reservacion, $reservacion["email"] );
 			}else{
 				$res["exito"] = -1;
@@ -118,12 +140,13 @@
 
 		$token = $_POST["cancelar_r"];
 		$reservacion = obtenerReservacionPorToken( $dbh, $token );
-		$rsp = cancelarReservacion( $dbh, $reservacion["id"] );
+		$rsp = 1;//cancelarReservacion( $dbh, $reservacion["id"] );
 		
 		if( $rsp != 0 ){
 			$res["exito"] = 1;
 			$res["mje"] = "Su reservación se ha cancelado con éxito";
-			//enviarMensajeEmail( "cancelacion_reservacion", $reservacion, $reservacion["email"] );
+			$reservacion = obtenerReservacionPorId( $dbh, $reservacion["id"] );
+			enviarMensajeEmail( "cancelacion_reservacion", $reservacion, $reservacion["email"] );
 		}else{
 			$res["exito"] = -1;
 			$res["mje"] = "Error al cancelar reservación";

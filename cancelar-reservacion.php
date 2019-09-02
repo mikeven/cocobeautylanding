@@ -176,7 +176,7 @@
         <div style="padding: 80px 0 20px 0">
           <a href="#!" class="btn-white btn-common bounce-top btn-cancelar-rsv" 
           data-email="<?php echo $reservacion['email'] ?>" 
-          data-token=<?php echo $token ?>>CANCELAR</a>
+          data-token=<?php echo $token ?>>CONFIRMAR</a>
         </div>
         <div id="respuesta_reservacion" style="padding: 20px 0"></div>
       </div>
