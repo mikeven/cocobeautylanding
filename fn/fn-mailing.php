@@ -5,10 +5,10 @@
   /* --------------------------------------------------------- */
   function obtenerCabecerasMensaje(){
     //Devuelve las cabecera 
-    $email_from = "reservaciones@cocobeautyclub.com";
+    $email_from = "digital@cupfsa.com";
     $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
     $cabeceras .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-    $cabeceras .= "From: Coco Beauty Club <$email_from>";
+    $cabeceras .= "From: Reservaciones CHANEL <$email_from>";
 
     return $cabeceras;
   }
@@ -56,7 +56,7 @@
     //Sustitución de elementos de la plantilla con los datos del mensaje
     
     if( $tmensaje == "nueva_reservacion" ){
-      $sobre["asunto"] = "Reservación en Coco Beauty Club";
+      $sobre["asunto"] = "Reservación CHANEL";
       $sobre["mensaje"] = mensajeNuevaReservacion( $plantilla, $datos );
     }
 
@@ -66,7 +66,7 @@
     }
 
     if( $tmensaje == "recordatorio_actividad" ){
-      $sobre["asunto"] = "Recordatorio Coco Beauty Club";
+      $sobre["asunto"] = "Recordatorio reservación CHANEL";
       $sobre["mensaje"] = mensajeRecordarActividad( $plantilla, $datos );
     }
 
@@ -79,7 +79,7 @@
     $cabeceras = obtenerCabecerasMensaje();
     $plantilla = obtenerPlantillaMensaje( $tipo_mensaje );
     $envio = escribirMensaje( $tipo_mensaje, $plantilla, $datos );
-    
+
     mail( $email_receiver, $envio["asunto"], $envio["mensaje"], $cabeceras );
   }
   /* --------------------------------------------------------- */

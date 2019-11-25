@@ -27,7 +27,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title><?php echo $titulo_pagina; ?> | Coco Beauty Club</title>
+<title><?php echo $titulo_pagina; ?> | CHANEL</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/icomoon-fonts.css">
@@ -205,7 +205,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <ul class="breadcrumb">
+        <ul class="breadcrumb hidden">
           <li><a href="index.php" class="page-scroll">Coco Beauty Club</a></li>
         </ul>
         <p>2019 Chanel</p>

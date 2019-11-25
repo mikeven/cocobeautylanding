@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="css/glide.theme.css">
   <style type="text/css">
     .bgnd_layer{
-      background-color: rgba(0, 0, 0, 0.0);
+      background-color: rgba(0, 0, 0, 0);
       position: absolute;
       top: 0;
       left: 0;
@@ -44,7 +44,7 @@
     }
 
     @media screen and (min-width: 768px){
-      .mbanner-titles{ /*max-width: 880px;*/ padding-bottom: 35%; }
+      .mbanner-titles{ max-width: 800px; }
     }
     @media screen and (max-width: 767px){
       .bgmain{
@@ -165,16 +165,12 @@
 
 <!-- Agenda tu cita -->
 <section class="container_0 container--full">
-  <div class="content" style="position:relative; margin: 0 10%;">
-    <div class="row">
-      <div class="col-md-6 col-sm-6 col-xs-12">
-        <div class="item-content text-center mbanner-titles">
-          <h4> Le ayudamos a encontrar la inspiración</h4>
-          <p></p>
-          <h5>Descubra los looks de maquillaje de estas fiestas de fin de año y encuentra el regalo perfecto para una navidad CHANEL.</h5>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-6 col-xs-12"></div>
+  <div class="content" style="position:relative;">
+    <div class="item-content text-center mbanner-titles">
+      <h2> Le ayudamos a encontrar la inspiración</h2>
+      <p></p>
+      <h4>Descubra los looks de maquillaje de estas fiestas de fin de año <br> 
+y encuentra el regalo perfecto para una navidad CHANEL.</h4>
     </div>
   </div>
   <div class="parallax bgmain"><div class="bgnd_layer"></div></div>
