@@ -95,7 +95,7 @@
         <nav class="navbar navbar-default">
           <div class="navbar-header page-scroll">
             <div align="center">
-               <a class="navbar-brand logo" href="#."><img src="images/letras.png" alt="logo" class="img-responsive"></a> 
+               <a class="navbar-brand logo" href="https://beautypanel.cupfsa.com/"><img src="images/letras.png" alt="logo" class="img-responsive"></a> 
             </div>
          </nav>
        </div>

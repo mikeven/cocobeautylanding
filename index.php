@@ -61,7 +61,7 @@
   }
 
   .bgmain{
-    background: url( images/chanel_red.jpg );
+    background: url( images/beauty-panel.jpg );
   }
 
   #info-club p, .item-content p{
@@ -93,7 +93,7 @@
   }
 
   .container_1 .content{
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .75);
     border-radius: 3px;
     color: #fff;
     margin: 0 auto;
@@ -204,7 +204,7 @@
       <a class="btn-white btn-common bounce-top page-scroll" href="#reserva">RESERVA</a>
     </div>
   </div>
-  <div class="parallax" data-parallax-image="images/LesBeiges_Chanel_Project.jpg"></div>
+  <div class="parallax" data-parallax-image="images/beauty-panel-xmas.jpg"></div>
 </section>
 
 <!-- Actividades -->

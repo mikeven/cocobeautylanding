@@ -1,3 +1,9 @@
+@media screen and (max-width: 768px){
+  .glide__arrow {
+    top: 40%;
+  }
+  
+}
 .glide__arrow {
   position: absolute;
   display: block;
