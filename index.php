@@ -171,7 +171,7 @@
         <div class="item-content text-center mbanner-titles">
           <h4> Le ayudamos a encontrar la inspiración</h4>
           <p></p>
-          <h5>Descubra los looks de maquillaje de estas fiestas de fin de año y encuentra el regalo perfecto para una navidad CHANEL.</h5>
+          <h5>Descubra los looks de maquillaje de estas fiestas de fin de año y encuentre el regalo perfecto para una navidad CHANEL.</h5>
         </div>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12"></div>

@@ -29,7 +29,7 @@
   /* --------------------------------------------------------- */
   function mensajeNuevaReservacion( $plantilla, $datos ){
     //Llenado de mensaje con plantilla de nueva reservación
-    $server = "http://cocobeautyclub.com/";
+    $server = "https://beautypanel.cupfsa.com/";
     $url_cancelacion = $server."cancelar-reservacion.php?token=".$datos["token"];
     
     $plantilla = str_replace( "{url_cancelacion}", $url_cancelacion, $plantilla );

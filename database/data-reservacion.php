@@ -140,7 +140,7 @@
 
 		$token = $_POST["cancelar_r"];
 		$reservacion = obtenerReservacionPorToken( $dbh, $token );
-		$rsp = 1;//cancelarReservacion( $dbh, $reservacion["id"] );
+		$rsp = cancelarReservacion( $dbh, $reservacion["id"] );
 		
 		if( $rsp != 0 ){
 			$res["exito"] = 1;

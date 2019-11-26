@@ -2530,8 +2530,7 @@ ul.category li a .date{
 	}
 
 	.bloq_desc{
-	    display: table;
-	    
+	    /*display: table;*/
 	}
 
 	.horas_act {
