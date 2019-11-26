@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/glide.core.css">
   <link rel="stylesheet" href="css/glide.theme.css">
   <style type="text/css">
+
     .bgnd_layer{
       background-color: rgba(0, 0, 0, 0.0);
       position: absolute;
@@ -43,12 +44,32 @@
       height: 100%;
     }
 
+    /* Fondo negro para título de banner principal */
+    @media screen and (max-width: 1140px){
+      #bgndlayer_tit{
+        background: rgba(0, 0, 0, .65);
+        border-radius: 3px;
+        padding: 20px 8px;
+      }
+    }
+    @media screen and (min-width: 1141px){
+      #content_main_banner{
+        position:relative; 
+        margin: 0 10%;
+      }
+    }
+
     @media screen and (min-width: 768px){
+      .bgmain{
+        background-position-y: 0% !important;
+      }
       .mbanner-titles{ /*max-width: 880px;*/ padding-bottom: 35%; }
     }
+
     @media screen and (max-width: 767px){
       .bgmain{
         background-position-x: 75% !important;
+        background-position-y: 0px !important;
       }
     }
     
@@ -71,7 +92,7 @@
 
     .bgmain{
       background: url( images/beauty-panel.jpg );
-      background-position-y: 0% !important;
+      
       background-position-x: center;
     }
 
@@ -165,13 +186,15 @@
 
 <!-- Agenda tu cita -->
 <section class="container_0 container--full">
-  <div class="content" style="position:relative; margin: 0 10%;">
+  <div id="content_main_banner" class="content">
     <div class="row">
       <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="item-content text-center mbanner-titles">
-          <h4> Le ayudamos a encontrar la inspiración</h4>
-          <p></p>
-          <h5>Descubra los looks de maquillaje de estas fiestas de fin de año y encuentre el regalo perfecto para una navidad CHANEL.</h5>
+          <div id="bgndlayer_tit">
+            <h4> Le ayudamos a encontrar la inspiración</h4>
+            <p></p>
+            <h5>Descubra los looks de maquillaje de estas fiestas de fin de año y encuentre el regalo perfecto para una navidad CHANEL.</h5>
+          </div>
         </div>
       </div>
       <div class="col-md-6 col-sm-6 col-xs-12"></div>

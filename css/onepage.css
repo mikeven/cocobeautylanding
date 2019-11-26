@@ -2405,7 +2405,7 @@ ul.category li a .date{
 @media screen and (max-width: 767px){
 
   h2{ font-size:30px; }
-  #main-navigation{ background-color: #1b1d1f; }
+  #main-navigation{ /*background-color: #1b1d1f;*/ background: rgba(0, 0, 0, .15); }
   
   .navbar-brand, #navigation.affix .navbar-brand{ 
   	display:inline-block;  padding: 15px 0 10px 0;
