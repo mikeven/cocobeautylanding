@@ -49,28 +49,38 @@
       #bgndlayer_tit{
         background: rgba(0, 0, 0, .65);
         border-radius: 3px;
-        padding: 20px 8px;
+        padding: 10px 8px;
       }
     }
     @media screen and (min-width: 1141px){
       #content_main_banner{
         position:relative; 
-        margin: 0 10%;
+        /*margin: 0 10%;*/
       }
     }
 
     @media screen and (min-width: 768px){
+      h4{ font-size: 24px }
+      h5{ font-size: 18px }
+      .navbar-header {
+        float: none;
+      }
       .bgmain{
+        background: url( images/beauty-chanel.jpg );
         background-position-y: 0% !important;
       }
-      .mbanner-titles{ /*max-width: 880px;*/ padding-bottom: 35%; }
+      .mbanner-titles{ /*max-width: 880px; padding-bottom: 35%;*/ }
     }
 
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 767px){ /* MOBILE */
+      h4{ font-size: 14px }
+      h5{ font-size: 12px }
       .bgmain{
-        background-position-x: 75% !important;
-        background-position-y: 0px !important;
+        background: url( images/beauty-chanel-mob.jpg );
+        /*background-position-x: 75% !important;
+        background-position-y: 0px !important;*/
       }
+      .mbanner-titles{ padding-bottom: 130%; }
     }
     
     .tx_desc{
@@ -91,7 +101,7 @@
     }
 
     .bgmain{
-      background: url( images/beauty-panel.jpg );
+      
       
       background-position-x: center;
     }
@@ -189,6 +199,9 @@
   <div id="content_main_banner" class="content">
     <div class="row">
       <div class="col-md-6 col-sm-6 col-xs-12">
+        
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="item-content text-center mbanner-titles">
           <div id="bgndlayer_tit">
             <h4> Le ayudamos a encontrar la inspiración</h4>
@@ -197,7 +210,6 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-sm-6 col-xs-12"></div>
     </div>
   </div>
   <div class="parallax bgmain"><div class="bgnd_layer"></div></div>
