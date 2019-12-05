@@ -303,6 +303,7 @@
           <li><a href="#." class="page-scroll">Coco Beauty Club</a></li>
         </ul>
         <p>2019 Chanel</p>
+        <p>Para más información llamar a: (+56) 956656883</p>
       </div>
     </div>
   </div>
